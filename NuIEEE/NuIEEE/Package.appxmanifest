@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="0d44cd21-9f1e-4468-b0f5-18a9ce5003af" Publisher="CN=shuffle" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>NuIEEE</DisplayName>
+    <PublisherDisplayName>shuffle</PublisherDisplayName>
+    <Logo>Assets\50.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NuIEEE.App">
+      <m2:VisualElements DisplayName="NuIEEE" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="NuIEEE" ForegroundText="light" BackgroundColor="#0072A8">
+        <m2:DefaultTile DefaultSize="wide310x150Logo" Wide310x150Logo="Assets\310.png">
+        </m2:DefaultTile>
+        <m2:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\24.png" />
+        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#0072A8" />
+      </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTask.TileManagerBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="audio" />
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+            <Task Type="pushNotification" />
+            <m2:Task Type="location" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
