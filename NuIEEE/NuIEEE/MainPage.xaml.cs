@@ -85,5 +85,10 @@ namespace NuIEEE
 
         private const string taskName = "TileManagerBackgroundTask";
         private const string taskEntryPoint = "BackgroundTask.TileManagerBackgroundTask";
+
+        private async void NuIEEE_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("http://nuieee.fe.up.pt"));
+        }
     }
 }
